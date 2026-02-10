@@ -158,4 +158,16 @@
     margin-bottom: 25px;
     font-size: 30px;
 }
+.btn-wishlist{
+    background-color: white;
+    border: none;
+}
+.HeartIcon{
+    color: #ff3e6c;
+    cursor : pointer;
+}
+.spec-grid{
+    line-height: 1.8;
+
+}
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }

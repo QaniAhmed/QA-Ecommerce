@@ -3,16 +3,12 @@ import './App.css'
 import BottomHeader from './components/header/bottomHeader.jsx'
 import TopHeader from './components/header/topHeader.jsx'
 import Home from './pages/Home.jsx'
-
-
-
-
-  
+import {  Outlet } from 'react-router-dom'
 
 function App() {
   const [CartItems,setCartItems]=useState([])
   const [WishlistItems,setWishlistItems]= useState([])
-
+  
   function UpdateCart(item){
     setCartItems((prev)=>{
       const isExist = prev.some((i)=>i.id==item.id)
@@ -43,13 +39,17 @@ function App() {
           }
       });
   }
-
-
+  
+  
   return (
     <>
+   
     <TopHeader cart={CartItems.length} Wishlist={WishlistItems.length} />
     <BottomHeader />
-    <Home UpdateCart= {UpdateCart} UpdateWishlist={UpdateWishlist}/>
+    {/* <Home UpdateCart= {UpdateCart} UpdateWishlist={UpdateWishlist}/> */}
+    <Outlet context={{ UpdateCart, UpdateWishlist }} />
+    
+    
     </> 
   )
 }

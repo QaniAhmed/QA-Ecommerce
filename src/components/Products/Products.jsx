@@ -3,10 +3,18 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import StarIcon from '@mui/icons-material/Star';
 import Product_actions from './Product-actions.jsx';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 
 const Products = (props) => {
+
+  function HandleCart(e,product){
+    e.preventDefault();
+    e.stopPropagation()
+    props.UpdateCart(product)
+
+  
+  }
   return (
     <section className="products-section">
       <div className="section-header">
@@ -44,7 +52,7 @@ const Products = (props) => {
                   <span className="current-price">${product.price}</span>
                   <span className="old-price">${Math.round(product.price * 1.2)}</span>
                 </div>
-                <button className="add-cart-btn" onClick={()=>props.UpdateCart(product)}>Add</button>
+                <button className="add-cart-btn" onClick={(e)=>HandleCart(e,product)}>Add</button>
               </div>
               
             </div>

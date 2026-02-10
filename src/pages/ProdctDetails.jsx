@@ -32,9 +32,8 @@ const ProductDetails = () => {
 
     return (
         <>
-        
-        <TopHeader/>
-        <BottomHeader/>
+        {/* <TopHeader/>
+        <BottomHeader/> */}
 <div className="product-page">
     <div className="product-wrapper">
         {/* Top Section: Media and Primary Product Information */}
@@ -84,7 +83,7 @@ const ProductDetails = () => {
                         <button>+</button>
                     </div>
                     <button className="btn-primary">Add to Shopping Bag</button>
-                    <button className="btn-wishlist"><FavoriteIcon/></button>
+                    <button className="btn-wishlist"><FavoriteIcon className='HeartIcon'/></button>
                 </div>
 
                 <div className="trust-badges">
@@ -101,15 +100,15 @@ const ProductDetails = () => {
                 <h3>Technical Specifications</h3>
                 <div className="spec-grid">
                     <div className="spec-item">
-                        <span>Brand</span>
+                        <span>Brand: </span>
                         <strong>{product.brand || 'Generic'}</strong>
                     </div>
                     <div className="spec-item">
-                        <span>Weight</span>
+                        <span>Weight: </span>
                         <strong>{product.weight}kg</strong>
                     </div>
                     <div className="spec-item">
-                        <span>Dimensions</span>
+                        <span>Dimensions: </span>
                         <strong>
                             {product.dimensions.width}x{product.dimensions.height}cm
                         </strong>

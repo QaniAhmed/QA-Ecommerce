@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Swipper from '../components/Home/Swipper.jsx'
 import Products from '../components/Products/Products.jsx'
-function Home(props) {
+import { useOutletContext } from 'react-router-dom';
+function Home() {
       const [ProductsOfCategory,setProductsOfCategory]= useState([]);
       const Categories = ['smartphones','laptops','tablets','sunglasses','mens-watches']
       useEffect(()=>{
@@ -22,6 +23,10 @@ function Home(props) {
         }
         GetAllProducts()
       },[])
+      // 
+    const {UpdateCart, UpdateWishlist} = useOutletContext()
+      console.log(UpdateCart)
+      console.log(UpdateWishlist)
 
       function InsertProducts(){
         console.log(ProductsOfCategory)
@@ -30,16 +35,17 @@ function Home(props) {
           return (<Products 
             key={item}
         categoryName={item} 
-        UpdateCart={props.UpdateCart} 
-        UpdateWishlist={props.UpdateWishlist} 
+        UpdateCart={UpdateCart} 
+        UpdateWishlist={UpdateWishlist} 
         Products={Section?Section.Products:[]} 
       />)
         })
       }
-
+     
   return (
     <div>
       <Swipper/>
+      
         {InsertProducts()}
     </div>
   )
