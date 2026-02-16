@@ -5,7 +5,7 @@ function Home(props) {
   return (
     <div>
       <Swipper/>
-      <Products UpdateCart={props.UpdateCart}/>
+      <Products UpdateCart={props.UpdateCart} UpdateWishlist={props.UpdateWishlist}/>
     </div>
   )
 }

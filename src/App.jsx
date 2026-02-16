@@ -12,15 +12,15 @@ function App() {
   function UpdateCart(){
     setCart(Cart+1)
   }
-  function UpdateLike(){
-    setCart(Wishlist+1)
+  function UpdateWishlist(){
+    setWishlist(Wishlist+1)
   }
 
   return (
     <>
-    <TopHeader cart={Cart} Like={Wishlist}/>
+    <TopHeader cart={Cart} Wishlist={Wishlist}/>
     <BottomHeader />
-    <Home UpdateCart= {UpdateCart} />
+    <Home UpdateCart= {UpdateCart} UpdateWishlist={UpdateWishlist}/>
     </> 
   )
 }

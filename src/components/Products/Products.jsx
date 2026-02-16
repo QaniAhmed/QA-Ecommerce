@@ -14,7 +14,6 @@ const Products = (props) => {
     async function GetData(){
         const response = await fetch('https://dummyjson.com/products/search?q=phone ')
         const result = await response.json()
-        // console.log(result.products)
         setPhoneProducts(result.products)
     }
     GetData()
@@ -38,12 +37,10 @@ const Products = (props) => {
                 <span className="discount-badge">-{Math.round(phone.discountPercentage)}%</span>
               )}
               <img src={phone.thumbnail} alt={phone.title} className="product-image" />
-              <Product_actions phone={phone}/>
-              
-              {/* <div className="product-actions" >
-                <button className="icon-btn" onClick={()=>handleWishlist(phone)} style={{background:Clicked?"#ff3e6c":""}} ><FavoriteBorderIcon fontSize="small" style={{background:Clicked?"#ff3e6c":""}}/></button>
-                <button className="icon-btn"><ShoppingCartIcon fontSize="small" /></button>
-              </div> */}
+
+            
+              <Product_actions phone={phone} UpdateWishlist={props.UpdateWishlist}/>
+
 
             </div>
 
@@ -64,6 +61,7 @@ const Products = (props) => {
                 </div>
                 <button className="add-cart-btn" onClick={props.UpdateCart}>Add</button>
               </div>
+              
             </div>
           </div>
         ))}

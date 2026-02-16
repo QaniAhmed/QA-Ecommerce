@@ -36,6 +36,7 @@ export default function TopHeader(props) {
           <div className="action-item">
             <span className="action-icon">{<FavoriteBorderIcon/>}</span>
             <span className="action-label">Wishlist</span>
+            <span className="Wishlist-badge">{props.Wishlist}</span>
             
           </div>
           <div className="action-item cart-btn">
