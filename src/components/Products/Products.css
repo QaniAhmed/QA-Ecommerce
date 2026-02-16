@@ -99,6 +99,11 @@
   background: var(--primary-blue);
   color: white;
 }
+.icon-btn:hover {
+  background: var(--primary-blue);
+  color: white;
+}
+
 
 /* Info Section */
 .product-info {

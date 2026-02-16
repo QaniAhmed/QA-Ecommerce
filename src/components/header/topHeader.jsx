@@ -4,7 +4,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 
-export default function TopHeader() {
+export default function TopHeader(props) {
+ 
   return (
     <header className="main-header">
       <div className="header-container">
@@ -35,11 +36,12 @@ export default function TopHeader() {
           <div className="action-item">
             <span className="action-icon">{<FavoriteBorderIcon/>}</span>
             <span className="action-label">Wishlist</span>
+            
           </div>
           <div className="action-item cart-btn">
             <span className="action-icon">{<ShoppingCartIcon/>}</span>
             <span className="action-label">Cart</span>
-            <span className="cart-badge">3</span>
+            <span className="cart-badge">{props.cart}</span>
           </div>
         </div>
       </div>

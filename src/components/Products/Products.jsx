@@ -3,19 +3,25 @@ import './Products.css';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import StarIcon from '@mui/icons-material/Star';
+import Product_actions from './Product-actions.jsx';
 
-const Products = () => {
-    const [PhoneProducts,setPhoneProducts]= useState([])
-  // 'phones' would be the array you fetch from your logic
+
+const Products = (props) => {
+
+    const [PhoneProducts,setPhoneProducts]= useState([]);
+    // const [Clicked,setClicked]= useState(false)
   useEffect(()=>{
     async function GetData(){
         const response = await fetch('https://dummyjson.com/products/search?q=phone ')
         const result = await response.json()
-        console.log(result.products)
+        // console.log(result.products)
         setPhoneProducts(result.products)
     }
     GetData()
   },[])
+
+  
+
   return (
     <section className="products-section">
       <div className="section-header">
@@ -32,11 +38,13 @@ const Products = () => {
                 <span className="discount-badge">-{Math.round(phone.discountPercentage)}%</span>
               )}
               <img src={phone.thumbnail} alt={phone.title} className="product-image" />
+              <Product_actions phone={phone}/>
               
-              <div className="product-actions">
-                <button className="icon-btn"><FavoriteBorderIcon fontSize="small" /></button>
+              {/* <div className="product-actions" >
+                <button className="icon-btn" onClick={()=>handleWishlist(phone)} style={{background:Clicked?"#ff3e6c":""}} ><FavoriteBorderIcon fontSize="small" style={{background:Clicked?"#ff3e6c":""}}/></button>
                 <button className="icon-btn"><ShoppingCartIcon fontSize="small" /></button>
-              </div>
+              </div> */}
+
             </div>
 
             {/* Bottom Part: Info */}
@@ -54,7 +62,7 @@ const Products = () => {
                   <span className="current-price">${phone.price}</span>
                   <span className="old-price">${Math.round(phone.price * 1.2)}</span>
                 </div>
-                <button className="add-cart-btn">Add</button>
+                <button className="add-cart-btn" onClick={props.UpdateCart}>Add</button>
               </div>
             </div>
           </div>
