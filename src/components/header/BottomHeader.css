@@ -31,13 +31,18 @@
   position: absolute;
   top: 50px;
   left: 0;
-  width: 100%;
+  width: 250px;             /* 1. Set a specific width so it doesn't stretch */
   background: var(--white);
   color: var(--text-gray);
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   list-style: none;
-  display: none; /* Toggle this with State in React later */
+  display: none; 
   z-index: 10;
+  
+  /* --- SCROLL LOGIC --- */
+  max-height: 400px;        /* 2. Limit the height */
+  overflow-y: auto;         /* 3. Add vertical scrollbar if content is long */
+  border: 1px solid #ddd;   /* Optional: adds definition */
 }
 
 .categories-dropdown:hover .category-menu {

@@ -1,10 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './BottomHeader.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
+// const [category,setCategory]= useState()
 const BottomHeader = () => {
+  const [categories,setCategories]= useState([])
+  useEffect(()=>{
+     async function GetProducts(){
+
+    try{
+      const response = await fetch("https://dummyjson.com/products/categories");
+       const result = await response.json()
+       setCategories(result);
+
+  
+    }
+    catch(e)
+    {console.log(e)}
+
+  }
+  GetProducts();
+
+  },[])
+ 
+
+
   return (
     <nav className="bottom-header">
       <div className="bottom-header-container">
@@ -17,10 +39,7 @@ const BottomHeader = () => {
           
           {/* Simple Dropdown Menu (Hidden by default in CSS) */}
           <ul className="category-menu">
-            <li>Electronics</li>
-            <li>Fashion</li>
-            <li>Home & Garden</li>
-            <li>Beauty</li>
+            {categories.map((category)=>( <li key={category.slug} >{category.name}</li>))}
           </ul>
         </div>
 
