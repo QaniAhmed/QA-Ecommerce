@@ -30,15 +30,14 @@ export default function TopHeader(props) {
             </button>
           </div>
         </div>
-
-        {/* Right: Actions */}
         <div className="header-right">
+                                              {/* wishlist */}
           <div className="action-item">
             <span className="action-icon">{<FavoriteBorderIcon/>}</span>
             <span className="action-label">Wishlist</span>
             <span className={props.Wishlist>0?"Wishlist-badge":""}>{props.Wishlist>0?props.Wishlist:""}</span>
-            
           </div>
+                                                {/* cart */}
           <div className="action-item cart-btn">
             <span className="action-icon">{<ShoppingCartIcon/>}</span>
             <span className="action-label">Cart</span>

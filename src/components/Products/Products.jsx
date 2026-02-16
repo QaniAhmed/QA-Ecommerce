@@ -58,7 +58,7 @@ const Products = (props) => {
                   <span className="current-price">${phone.price}</span>
                   <span className="old-price">${Math.round(phone.price * 1.2)}</span>
                 </div>
-                <button className="add-cart-btn" onClick={props.UpdateCart}>Add</button>
+                <button className="add-cart-btn" onClick={()=>props.UpdateCart(phone)}>Add</button>
               </div>
               
             </div>

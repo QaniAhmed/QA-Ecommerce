@@ -7,13 +7,23 @@ import Home from './pages/Home.jsx'
 
 
 function App() {
-  const [Cart,setCart] = useState(0)
-  const [Wishlist,setWishlist] = useState(0)
+  const [CartItems,setCartItems]=useState([])
   const [WishlistItems,setWishlistItems]= useState([])
-  function UpdateCart(){
-    setCart(Cart+1)
+  
+  function UpdateCart(item){
+    setCartItems((prev)=>{
+      const isExist = prev.some((i)=>i.id==item.id)
+      if(isExist){
+        console.log("delete it")
+        return prev.filter((i)=>i.id!=item.id)
+      }
+      else {
+        console.log("added")
+        return [...prev,item]
+      }
+    })
   }
-  const count = WishlistItems.length
+
 
   function UpdateWishlist(item)
   {
@@ -35,7 +45,7 @@ function App() {
 
   return (
     <>
-    <TopHeader cart={Cart} Wishlist={count}/>
+    <TopHeader cart={CartItems.length} Wishlist={WishlistItems.length}/>
     <BottomHeader />
     <Home UpdateCart= {UpdateCart} UpdateWishlist={UpdateWishlist}/>
     </> 
