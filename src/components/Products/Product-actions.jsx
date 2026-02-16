@@ -5,10 +5,8 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 function Product_actions(props) {
     const [Clicked,setClicked]= useState(false);
     function handleWishlist(phone){
-      if(!Clicked)
-              props.UpdateWishlist(); 
-
-    setClicked(!Clicked)
+          props.UpdateWishlist(phone); 
+          setClicked(!Clicked)
     }
   return (
             <div className="product-actions" >

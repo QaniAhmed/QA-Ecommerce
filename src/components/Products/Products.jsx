@@ -37,8 +37,7 @@ const Products = (props) => {
                 <span className="discount-badge">-{Math.round(phone.discountPercentage)}%</span>
               )}
               <img src={phone.thumbnail} alt={phone.title} className="product-image" />
-
-            
+              
               <Product_actions phone={phone} UpdateWishlist={props.UpdateWishlist}/>
 
 
