@@ -12,9 +12,7 @@ function App() {
     <TopHeader/>
     <BottomHeader/>
     <Home/>
-    </>
-    
-     
+    </> 
   )
 }
 
