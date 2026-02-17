@@ -3,6 +3,7 @@ import './header.css'
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+
 export default function TopHeader() {
   return (
     <header className="main-header">

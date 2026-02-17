@@ -7,26 +7,22 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 // const [category,setCategory]= useState()
 const BottomHeader = () => {
   const [categories,setCategories]= useState([])
-  useEffect(()=>{
+  useEffect(()=>
+    {
      async function GetProducts(){
 
-    try{
+    try
+    {
       const response = await fetch("https://dummyjson.com/products/categories");
-       const result = await response.json()
-       setCategories(result);
-
-  
+      const result = await response.json()
+      setCategories(result);
     }
-    catch(e)
-    {console.log(e)}
+    catch(e){console.log(e)}
 
   }
   GetProducts();
-
   },[])
- 
-
-
+  
   return (
     <nav className="bottom-header">
       <div className="bottom-header-container">
