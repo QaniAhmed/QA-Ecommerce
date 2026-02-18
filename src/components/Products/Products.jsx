@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import './Products.css';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -7,38 +6,23 @@ import Product_actions from './Product-actions.jsx';
 
 
 const Products = (props) => {
-
-    const [PhoneProducts,setPhoneProducts]= useState([]);
-    // const [Clicked,setClicked]= useState(false)
-  useEffect(()=>{
-    async function GetData(){
-        const response = await fetch('https://dummyjson.com/products/search?q=phone ')
-        const result = await response.json()
-        setPhoneProducts(result.products)
-    }
-    GetData()
-  },[])
-
-  
-
   return (
     <section className="products-section">
       <div className="section-header">
-        <h2>Premium Smartphones</h2>
+        <h2>{props.categoryName}</h2>
         <div className="header-line"></div>
       </div>
 
       <div className="products-grid">
-        {PhoneProducts?.map((phone) => (
-          <div className="product-card" key={phone.id}>
-            {/* Top Part: Image & Badges */}
+        {props.Products?.map((product) => (
+          <div className="product-card" key={product.id}>
             <div className="product-image-container">
-              {phone.discountPercentage > 10 && (
-                <span className="discount-badge">-{Math.round(phone.discountPercentage)}%</span>
+              {product.discountPercentage > 10 && (
+                <span className="discount-badge">-{Math.round(product.discountPercentage)}%</span>
               )}
-              <img src={phone.thumbnail} alt={phone.title} className="product-image" />
+              <img src={product.thumbnail} alt={product.title} className="product-image" />
               
-              <Product_actions phone={phone} UpdateWishlist={props.UpdateWishlist}/>
+              <Product_actions phone={product} UpdateWishlist={props.UpdateWishlist} UpdateCart={props.UpdateCart}/>
 
 
             </div>
@@ -46,19 +30,19 @@ const Products = (props) => {
             {/* Bottom Part: Info */}
             <div className="product-info">
               <span className="category-label">Smartphone</span>
-              <h3 className="product-title">{phone.title}</h3>
+              <h3 className="product-title">{product.title}</h3>
               
               <div className="rating">
                 <StarIcon className="star-icon" />
-                <span>{phone.rating}</span>
+                <span>{product.rating}</span>
               </div>
 
               <div className="product-price-row">
                 <div className="price-container">
-                  <span className="current-price">${phone.price}</span>
-                  <span className="old-price">${Math.round(phone.price * 1.2)}</span>
+                  <span className="current-price">${product.price}</span>
+                  <span className="old-price">${Math.round(product.price * 1.2)}</span>
                 </div>
-                <button className="add-cart-btn" onClick={()=>props.UpdateCart(phone)}>Add</button>
+                <button className="add-cart-btn" onClick={()=>props.UpdateCart(product)}>Add</button>
               </div>
               
             </div>

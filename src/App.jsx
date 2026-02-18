@@ -9,7 +9,7 @@ import Home from './pages/Home.jsx'
 function App() {
   const [CartItems,setCartItems]=useState([])
   const [WishlistItems,setWishlistItems]= useState([])
-  
+
   function UpdateCart(item){
     setCartItems((prev)=>{
       const isExist = prev.some((i)=>i.id==item.id)
@@ -23,8 +23,6 @@ function App() {
       }
     })
   }
-
-
   function UpdateWishlist(item)
   {
         setWishlistItems((prev) => {
@@ -45,7 +43,7 @@ function App() {
 
   return (
     <>
-    <TopHeader cart={CartItems.length} Wishlist={WishlistItems.length}/>
+    <TopHeader cart={CartItems.length} Wishlist={WishlistItems.length} />
     <BottomHeader />
     <Home UpdateCart= {UpdateCart} UpdateWishlist={UpdateWishlist}/>
     </> 

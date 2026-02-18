@@ -3,18 +3,30 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function Product_actions(props) {
-    const [Clicked,setClicked]= useState(false);
-    function handleWishlist(phone){
+    const [ClickedWishlist,setClickedWishlist]= useState(false);
+    const [ClickedCart,setClickedCart]=useState(false);
+
+    function handleWishlist(phone)
+    {
           props.UpdateWishlist(phone); 
-          setClicked(!Clicked)
+          setClickedWishlist(!ClickedWishlist)
     }
+    
+    function handleCart(phone)
+    {
+      props.UpdateCart(phone)
+      setClickedCart(!ClickedCart)
+
+    }
+
+
   return (
             <div className="product-actions" >
                 <button className="icon-btn" onClick={()=>handleWishlist(props.phone)} 
-                        style={{background:Clicked?"#ff3e6c":"",color: Clicked ? "white" : ""}} >
-                         <FavoriteBorderIcon fontSize="small" style={{background:Clicked?"#ff3e6c":"",color: Clicked ? "white" : ""}}/>
+                        style={{background:ClickedWishlist?"#ff3e6c":"",color: ClickedWishlist ? "white" : ""}} >
+                        <FavoriteBorderIcon fontSize="small" style={{background:ClickedWishlist?"#ff3e6c":"",color: ClickedWishlist ? "white" : ""}}/>
                 </button>
-                <button className="icon-btn"><ShoppingCartIcon fontSize="small" /></button>
+                <button className="icon-btn" onClick={()=>handleCart(props.phone)} style={{background:ClickedCart?"#285503":"",color: ClickedCart ? "white" : ""}}><ShoppingCartIcon fontSize="small" style={{background:ClickedCart?"#285503":"",color: ClickedCart ? "white" : ""}}/></button>
             </div>
   )
 }

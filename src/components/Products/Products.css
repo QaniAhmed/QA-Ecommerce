@@ -1,9 +1,20 @@
+/* General Variables */
+:root {
+  --primary-blue: #007bff;
+  --light-blue: #e7f1ff;
+  --text-gray: #666;
+  --bg-light: #f9f9f9;
+}
+
+/* Main Section Container */
 .products-section {
   max-width: 1200px;
   margin: 40px auto;
   padding: 0 20px;
+  overflow: hidden; /* Prevent content overflow */
 }
 
+/* Header Styling */
 .section-header {
   margin-bottom: 30px;
 }
@@ -20,15 +31,37 @@
   background-color: var(--primary-blue);
 }
 
-/* Grid Layout */
+/* --- HORIZONTAL SLIDER LOGIC --- */
 .products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  display: flex;                /* Align cards in a single row */
+  overflow-x: auto;             /* Enable horizontal scrolling */
   gap: 25px;
+  padding: 20px 10px;           /* Space for card hover shadows */
+  scroll-behavior: smooth;      /* Smooth transition when scrolling */
+  scrollbar-width: thin;        /* Scrollbar styling for Firefox */
+  scrollbar-color: #ccc transparent;
+  -webkit-overflow-scrolling: touch; /* Momentum scrolling for iOS/Android */
 }
 
-/* Card Styling */
+/* Custom Scrollbar for Chrome, Edge, and Safari */
+.products-grid::-webkit-scrollbar {
+  height: 6px;                  /* Thickness of the scrollbar */
+}
+
+.products-grid::-webkit-scrollbar-thumb {
+  background: #ddd;             /* Handle color */
+  border-radius: 10px;
+}
+
+.products-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-blue); /* Handle color on hover */
+}
+
+/* --- PRODUCT CARD STYLING --- */
 .product-card {
+  min-width: 200px;             /* Fixed width for each item in slider */
+  max-width: 230px;
+  flex-shrink: 0;               /* CRITICAL: Prevents cards from shrinking */
   background: white;
   border-radius: 12px;
   border: 1px solid #f0f0f0;
@@ -38,14 +71,14 @@
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* Image Section */
+/* Image Container */
 .product-image-container {
   height: 200px;
-  background-color: #f9f9f9;
+  background-color: var(--bg-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,11 +86,12 @@
 }
 
 .product-image {
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 75%;
+  max-height: 75%;
   object-fit: contain;
 }
 
+/* Discount Tag */
 .discount-badge {
   position: absolute;
   top: 10px;
@@ -68,21 +102,23 @@
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: bold;
+  z-index: 2;
 }
 
-/* Action Buttons (Hidden until hover) */
+/* Action Buttons (Wishlist/Cart Icons) */
 .product-actions {
   position: absolute;
-  right: -50px;
+  right: -50px;                 /* Hidden off-canvas by default */
   top: 10px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   transition: right 0.3s ease;
+  z-index: 3;
 }
 
 .product-card:hover .product-actions {
-  right: 10px;
+  right: 10px;                  /* Slide in on card hover */
 }
 
 .icon-btn {
@@ -93,19 +129,17 @@
   cursor: pointer;
   display: flex;
   color: var(--text-gray);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: 0.2s;
 }
 
 .icon-btn:hover {
   background: var(--primary-blue);
   color: white;
-}
-.icon-btn:hover {
-  background: var(--primary-blue);
-  color: white;
+  transform: scale(1.1);
 }
 
-
-/* Info Section */
+/* Product Content Details */
 .product-info {
   padding: 15px;
 }
@@ -119,11 +153,11 @@
 
 .product-title {
   font-size: 1rem;
-  margin: 5px 0;
+  margin: 8px 0;
   color: #333;
-  white-space: nowrap;
+  white-space: nowrap;          /* Keep title on one line */
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis;      /* Show "..." for long titles */
 }
 
 .rating {
@@ -132,14 +166,14 @@
   gap: 4px;
   font-size: 0.85rem;
   color: #ffa41c;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .star-icon {
   font-size: 1rem !important;
 }
 
-/* Price & Button Row */
+/* Price and CTA Row */
 .product-price-row {
   display: flex;
   justify-content: space-between;
@@ -148,9 +182,9 @@
 }
 
 .current-price {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--primary-blue);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #222;
 }
 
 .old-price {
@@ -164,11 +198,11 @@
   background-color: var(--light-blue);
   color: var(--primary-blue);
   border: none;
-  padding: 6px 15px;
-  border-radius: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .add-cart-btn:hover {
