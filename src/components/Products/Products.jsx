@@ -3,6 +3,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import StarIcon from '@mui/icons-material/Star';
 import Product_actions from './Product-actions.jsx';
+import { Link } from 'react-router-dom';
 
 
 const Products = (props) => {
@@ -15,7 +16,8 @@ const Products = (props) => {
 
       <div className="products-grid">
         {props.Products?.map((product) => (
-          <div className="product-card" key={product.id}>
+          <Link to={`/product/${product.id}`}>
+           <div className="product-card" key={product.id}>
             <div className="product-image-container">
               {product.discountPercentage > 10 && (
                 <span className="discount-badge">-{Math.round(product.discountPercentage)}%</span>
@@ -47,6 +49,9 @@ const Products = (props) => {
               
             </div>
           </div>
+          
+          </Link>
+         
         ))}
       </div>
     </section>

@@ -6,6 +6,9 @@ import Home from './pages/Home.jsx'
 
 
 
+
+  
+
 function App() {
   const [CartItems,setCartItems]=useState([])
   const [WishlistItems,setWishlistItems]= useState([])
@@ -40,6 +43,7 @@ function App() {
           }
       });
   }
+
 
   return (
     <>
