@@ -16,8 +16,8 @@ const Products = (props) => {
 
       <div className="products-grid">
         {props.Products?.map((product) => (
-          <Link to={`/product/${product.id}`}>
-           <div className="product-card" key={product.id}>
+          <div className="product-card" key={product.id}>
+             <Link to={`/product/${product.id}`} className='LinkDecoratoin'>
             <div className="product-image-container">
               {product.discountPercentage > 10 && (
                 <span className="discount-badge">-{Math.round(product.discountPercentage)}%</span>
@@ -48,9 +48,9 @@ const Products = (props) => {
               </div>
               
             </div>
+          </Link>
           </div>
           
-          </Link>
          
         ))}
       </div>
