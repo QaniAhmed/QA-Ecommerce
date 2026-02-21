@@ -9,10 +9,10 @@ import Home from './pages/Home.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />, // هذا المكون يحتوي فقط على Header, Footer, و Outlet
+    element: <App />, 
     children: [
       {
-        index: true, // كلمة index تعني: اظهر هذا المكون عندما يكون المسار "/" بالضبط
+        index: true, 
         element: <Home /> 
       },
       {
@@ -25,7 +25,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <App /> */}
     <RouterProvider router={router} />
   </StrictMode>,
 )

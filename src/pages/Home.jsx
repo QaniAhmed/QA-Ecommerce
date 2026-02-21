@@ -23,25 +23,26 @@ function Home() {
         }
         GetAllProducts()
       },[])
-      // 
+
     const {UpdateCart, UpdateWishlist} = useOutletContext()
       console.log(UpdateCart)
       console.log(UpdateWishlist)
 
-      function InsertProducts(){
+      function InsertProducts()
+      {
         console.log(ProductsOfCategory)
         return Categories.map((item)=>{
           const Section= ProductsOfCategory.find((FetchedItem)=>FetchedItem.Category===item)
           return (<Products 
-            key={item}
-        categoryName={item} 
-        UpdateCart={UpdateCart} 
-        UpdateWishlist={UpdateWishlist} 
-        Products={Section?Section.Products:[]} 
-      />)
+                    key={item}
+                    categoryName={item} 
+                    UpdateCart={UpdateCart} 
+                    UpdateWishlist={UpdateWishlist} 
+                    Products={Section?Section.Products:[]} 
+                                                        />)
         })
       }
-     
+
   return (
     <div>
       <Swipper/>

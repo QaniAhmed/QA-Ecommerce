@@ -22,6 +22,7 @@ function App() {
       }
     })
   }
+
   function UpdateWishlist(item)
   {
         setWishlistItems((prev) => {
@@ -39,19 +40,24 @@ function App() {
           }
       });
   }
+
+  function IncreaseCartWithCount(item){
+    setCartItems((prev)=>{
+        return [...prev,item]
+    })
+  }
+  
+   function DecreaseCartWithCount(){
+      setCartItems((prev)=>prev)
+  }
   
   
   return (
     <>
-   
     <TopHeader cart={CartItems.length} Wishlist={WishlistItems.length} />
     <BottomHeader />
-    {/* <Home UpdateCart= {UpdateCart} UpdateWishlist={UpdateWishlist}/> */}
-    <Outlet context={{ UpdateCart, UpdateWishlist }} />
-    
-    
+    <Outlet context={{ UpdateCart, UpdateWishlist ,IncreaseCartWithCount,DecreaseCartWithCount}} />  
     </> 
   )
 }
-
 export default App
