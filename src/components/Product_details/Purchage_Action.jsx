@@ -1,28 +1,27 @@
-import React, { useState } from 'react'
 import { useOutletContext } from 'react-router-dom'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 function Purchage_Action(props) {
-        const {UpdateCart, UpdateWishlist,IncreaseCartWithCount,DecreaseCartWithCount} = useOutletContext()
-        const [Count,setCount] =useState(0)
+        const {UpdateCart, UpdateWishlist,IncreaseCartWithCount,DecreaseCartWithCount,totalQuantity} = useOutletContext()
         
-        function handleIncrease(product){
-            setCount(Count+1)
-            IncreaseCartWithCount(product)
+        function handleIncrease(product) 
+        {
+            IncreaseCartWithCount(product);
+        }       
 
-        }
-        function handleDecrease(){
-            setCount(Count-1)
-            // DecreaseCartWithCount(product)
+        function handleDecrease(product)
+        {
+                DecreaseCartWithCount(product)
             
+
         }
     
 return (
     <div className="purchase-actions">
                     <div className="qty-selector">
                         <button onClick={()=>handleDecrease(props.product)}>-</button>
-                        <span>{Count}</span>
+                        <span>{totalQuantity}</span>
                         <button onClick={()=>handleIncrease(props.product)}>+</button>
                     </div>
                     <button className="btn-primary" onClick={()=>UpdateCart(props.product)}>Add to Shopping Bag</button>

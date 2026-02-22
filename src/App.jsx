@@ -10,6 +10,7 @@ function App() {
   const [WishlistItems,setWishlistItems]= useState([])
   
   function UpdateCart(item){
+
     setCartItems((prev)=>{
       const isExist = prev.some((i)=>i.id==item.id)
       if(isExist){
@@ -18,9 +19,11 @@ function App() {
       }
       else {
         console.log("added")
-        return [...prev,item]
+        console.log([...prev,{...item,quantity: 1}])
+        return [...prev,{...item,quantity: 1}]
       }
     })
+    
   }
 
   function UpdateWishlist(item)
@@ -43,20 +46,49 @@ function App() {
 
   function IncreaseCartWithCount(item){
     setCartItems((prev)=>{
-        return [...prev,item]
+      const isExist = prev.find((i)=>i.id===item.id);
+      if(isExist)
+      {
+        return prev.map((i)=>( i.id===item.id ? {...i,quantity:i.quantity+1}:i)
+         
+        )
+      }
+      else {
+      return [...prev, { ...item, quantity: 1 }];
+    }
     })
   }
   
-   function DecreaseCartWithCount(){
-      setCartItems((prev)=>prev)
-  }
+  const totalQuantity = CartItems.reduce((acc, item) => {
+    return acc + item.quantity;
+}, 0);
+  
+   function DecreaseCartWithCount(item) {
+  setCartItems((prev) => {
+    const isExist = prev.find((i) => i.id === item.id);
+
+    if (!isExist) return prev; //if item not found, do nothing
+
+    if (isExist.quantity > 1) {
+      // Subtract 1 if more than one exists
+      return prev.map((i) =>
+        i.id === item.id ? { ...i, quantity: i.quantity - 1 } : i
+      );
+    } else {
+      // Remove item completely if current quantity is 1
+      return prev.filter((i) => i.id !== item.id);
+    }
+  });
+}
+  
+  
   
   
   return (
     <>
-    <TopHeader cart={CartItems.length} Wishlist={WishlistItems.length} />
+    <TopHeader cart={totalQuantity} Wishlist={WishlistItems.length} />
     <BottomHeader />
-    <Outlet context={{ UpdateCart, UpdateWishlist ,IncreaseCartWithCount,DecreaseCartWithCount}} />  
+    <Outlet context={{ UpdateCart, UpdateWishlist ,IncreaseCartWithCount,DecreaseCartWithCount,totalQuantity}} />  
     </> 
   )
 }

@@ -25,12 +25,12 @@ function Home() {
       },[])
 
     const {UpdateCart, UpdateWishlist} = useOutletContext()
-      console.log(UpdateCart)
-      console.log(UpdateWishlist)
+      // console.log(UpdateCart)
+      // console.log(UpdateWishlist)
 
       function InsertProducts()
       {
-        console.log(ProductsOfCategory)
+        // console.log(ProductsOfCategory)
         return Categories.map((item)=>{
           const Section= ProductsOfCategory.find((FetchedItem)=>FetchedItem.Category===item)
           return (<Products 

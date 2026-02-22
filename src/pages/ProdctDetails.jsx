@@ -24,7 +24,7 @@ const ProductDetails = () => {
 
             try 
             {
-                const response = await fetch(`https://dummjson.com/products/${id}`);
+                const response = await fetch(`https://dummyjson.com/products/${id}`);
                 const result = await response.json();
                 setProduct(result);
             } catch (e) {
