@@ -13,7 +13,7 @@ export default function TopHeader(props) {
         {/* Left: Logo/Icon */}
         <div className="header-left">
           <div className="logo-icon">
-            <span className="icon-placeholder"><img src='./src/img/React Ecommerce Reda Tech/img/icon.png' alt="logo" height={'40px'}/> </span>
+            <span className="icon-placeholder"><img src='./assets/img/React Ecommerce Reda Tech/img/icon.png' alt="logo" height={'40px'}/> </span>
             <Link to={'/'} style={{textDecoration:"none",color:'inherit'}}>
             <span className="logo-text">QA Shop</span>
             

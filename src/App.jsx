@@ -80,10 +80,6 @@ function App() {
     }
   });
 }
-  
-  
-  
-  
   return (
     <>
     <TopHeader cart={totalQuantity} Wishlist={WishlistItems.length} />
