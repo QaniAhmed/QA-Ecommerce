@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import BottomHeader from './components/header/bottomHeader.jsx'
 import TopHeader from './components/header/topHeader.jsx'
@@ -6,8 +6,17 @@ import Home from './pages/Home.jsx'
 import {  Outlet } from 'react-router-dom'
 
 function App() {
-  const [CartItems,setCartItems]=useState([])
+  // const [CartItems,setCartItems]=useState([])
+  // 1. Initial State from Storage
+  const [CartItems, setCartItems] = useState(() => {
+    const savedCart = localStorage.getItem("myCart");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
   const [WishlistItems,setWishlistItems]= useState([])
+
+  useEffect(()=>{
+    localStorage.setItem("myCart", JSON.stringify(CartItems))
+  },[CartItems])
   
   function UpdateCart(item){
 
@@ -84,7 +93,7 @@ function App() {
     <>
     <TopHeader cart={totalQuantity} Wishlist={WishlistItems.length} />
     <BottomHeader />
-    <Outlet context={{ UpdateCart, UpdateWishlist ,IncreaseCartWithCount,DecreaseCartWithCount,totalQuantity}} />  
+    <Outlet context={{ UpdateCart, UpdateWishlist ,IncreaseCartWithCount,DecreaseCartWithCount,totalQuantity,CartItems}} />  
     </> 
   )
 }

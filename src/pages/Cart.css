@@ -1,0 +1,141 @@
+.cart-page-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cart-title {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.cart-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Items List Section */
+.cart-items-section {
+    flex: 2;
+}
+
+.cart-item-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-details {
+    display: flex;
+    gap: 20px;
+}
+
+.item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+}
+
+/* Quantity and Price */
+.item-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.quantity-controls button {
+    padding: 5px 12px;
+    border: none;
+    background: #f9f9f9;
+    cursor: pointer;
+}
+
+.quantity-controls span {
+    padding: 0 15px;
+    font-weight: bold;
+}
+
+.item-total-price {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Summary Section */
+.cart-summary-section {
+    flex: 1;
+    background: #fbfbfb;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.summary-row.total {
+    border-top: 2px solid #eee;
+    padding-top: 15px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #000;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cart-content {
+        flex-direction: column;
+    }
+    .cart-summary-section {
+        width: 100%;
+    }
+}

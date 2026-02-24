@@ -39,7 +39,7 @@ function Home() {
                     UpdateCart={UpdateCart} 
                     UpdateWishlist={UpdateWishlist} 
                     Products={Section?Section.Products:[]} 
-                                                        />)
+/>)
         })
       }
 
