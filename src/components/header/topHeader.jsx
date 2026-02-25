@@ -48,11 +48,13 @@ export default function TopHeader(props) {
           <span className="action-label">Wishlist</span>
         </div>
                                                 {/* cart */}
+          <Link to={'Cart'} className='LinkStyle'>
           <div className="action-item cart-btn">
             <span className="action-icon">{<ShoppingCartIcon/>}</span>
             <span className="action-label">Cart</span>
             <span className={props.cart>0?"cart-badge":""}> {props.cart>0?props.cart:""} </span>
           </div>
+          </Link>
         </div>
       </div>
     </header>

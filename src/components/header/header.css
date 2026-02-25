@@ -136,3 +136,9 @@
   align-items: center;
   cursor: pointer;
 }
+
+.LinkStyle{
+  text-decoration: none;
+  color: inherit;
+  outline: none; /* Frame after click*/
+}

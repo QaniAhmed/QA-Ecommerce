@@ -12,7 +12,8 @@ function App() {
     UpdateWishlist, 
     IncreaseCartWithCount, 
     DecreaseCartWithCount, 
-    totalQuantity
+    totalQuantity,
+    RemoveItem
   } = useCart();
 
 
@@ -27,7 +28,7 @@ function App() {
         UpdateWishlist, 
         IncreaseCartWithCount, 
         DecreaseCartWithCount, 
-        totalQuantity 
+        totalQuantity,RemoveItem
       }} />  
     </> 
   )

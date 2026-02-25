@@ -4,8 +4,6 @@ export function useCart() {
   const [CartItems, setCartItems] = useStatePersistence("cart", []);
   const [WishlistItems, setWishlistItems] = useStatePersistence("Wishlist", []);
 
-  // --- استخدام أسمائك القديمة بالضبط ---
-
   const UpdateCart = (item) => {
     setCartItems((prev) => {
       const isExist = prev.some((i) => i.id == item.id);
@@ -45,6 +43,11 @@ export function useCart() {
       return prev.filter((i) => i.id !== item.id);
     });
   };
+  const RemoveItem = (item) => {
+    setCartItems((prev) => {
+      return prev.filter((i) => i.id !== item.id);
+    });
+  };
 
   const totalQuantity = CartItems.reduce((acc, item) => acc + item.quantity, 0);
 
@@ -56,5 +59,6 @@ export function useCart() {
     IncreaseCartWithCount,
     DecreaseCartWithCount,
     totalQuantity,
+    RemoveItem,
   };
 }

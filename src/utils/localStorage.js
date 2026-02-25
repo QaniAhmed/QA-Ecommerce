@@ -1,6 +1,5 @@
 export function GetItem(key) {
   const item = localStorage.getItem(key);
-  console.log(item);
   return JSON.parse(item);
 }
 
