@@ -13,8 +13,8 @@ const Products = (props) => {
     e.stopPropagation()
     props.UpdateCart(product)
 
-  
   }
+  
   return (
     <section className="products-section">
       <div className="section-header">

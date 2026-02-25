@@ -36,11 +36,17 @@ export default function TopHeader(props) {
         </div>
         <div className="header-right">
                                               {/* wishlist */}
-          <div className="action-item">
-            <span className="action-icon">{<FavoriteBorderIcon/>}</span>
-            <span className="action-label">Wishlist</span>
-            <span className={props.Wishlist>0?"Wishlist-badge":""}>{props.Wishlist>0?props.Wishlist:""}</span>
+         <div className="action-item">
+
+          <div className="icon-wrapper">
+            <span className="action-icon"><FavoriteBorderIcon /></span>
+            {props.Wishlist > 0 && (
+              <span className="Wishlist-badge">{props.Wishlist}</span>
+            )}
           </div>
+          
+          <span className="action-label">Wishlist</span>
+        </div>
                                                 {/* cart */}
           <div className="action-item cart-btn">
             <span className="action-icon">{<ShoppingCartIcon/>}</span>
