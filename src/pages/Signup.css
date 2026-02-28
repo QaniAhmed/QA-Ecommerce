@@ -1,0 +1,115 @@
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+  background-color: #f9f9f9; /* لون هادئ للخلفية */
+}
+
+.signup-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.signup-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.signup-subtitle {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.signup-form {
+  text-align: left;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input-group input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #333;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+}
+
+/* لجعل كلمة السر والجوال بجانب بعضهما في الشاشات الواسعة */
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #333; /* لون داكن فخم */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.signup-btn:hover {
+  background-color: #000;
+}
+
+.auth-footer {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #666;
+}
+
+.auth-footer a {
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .input-row {
+    grid-template-columns: 1fr;
+  }
+  .signup-box {
+    padding: 25px;
+  }
+}

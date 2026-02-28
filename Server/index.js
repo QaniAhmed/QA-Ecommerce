@@ -7,7 +7,12 @@ import { SecureRoute } from "./utils/Auth.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  }),
+);
 const db = createClient(process.env.DB_URL, process.env.DB_KEY);
 // console.log(db);
 app.use(express.json());
