@@ -3,8 +3,12 @@ import { useState } from 'react';
 import './Signup.css';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import SuccessView from '../components/Signup/SuccessView.jsx';
+import SignUpform from '../components/Signup/form.jsx';
+
 
 export default function SignupPage() {
+  const [isSucces,setIssucces]= useState(false)
   const navigate = useNavigate()
   const [State,setState]= useState({
     fullname:"",
@@ -15,6 +19,7 @@ export default function SignupPage() {
 
   function handleChange(e){
     const {name,value} = e.target;
+    console.log(name ," ", value)
     setState((prev)=>({
       ...prev,
       [name] : value
@@ -30,7 +35,9 @@ export default function SignupPage() {
       if(response.status===201)
       {
         alert("Account Created!");
-            navigate("/login");
+        setIssucces(true)
+        setTimeout(() => navigate("/login"), 3000)
+          
 
       }
     }
@@ -44,44 +51,18 @@ export default function SignupPage() {
   return (
     <div className="signup-container">
       <div className="signup-box">
+       {isSucces ? (<SuccessView/>) : 
+        ( <>
         <h2 className="signup-title">Create Account</h2>
         <p className="signup-subtitle">Please fill in the details below</p>
 
-        <form className="signup-form" onSubmit={handleSubmit}>
-          <div className="input-group">
-            <label>Full Name</label>
-            <input type="text" placeholder="John Doe" name="fullname" onChange={handleChange} required  />
-          </div>
-
-          <div className="input-group">
-            <label>Email Address</label>
-            <input type="email" placeholder="example@mail.com" name="email" onChange={handleChange} required />
-          </div>
-
-          <div className="input-row">
-            <div className="input-group">
-              <label>Password</label>
-              <input type="password" placeholder="••••••••" name="password" onChange={handleChange} required />
-            </div>
-
-
-
-            <div className="input-group">
-              <label>Phone Number</label>
-              <input type="tel" placeholder="05xxxxxxxx" name="phone" onChange={handleChange}  />
-            </div>
-          </div>
-
-
-
-          <button type="submit" className="signup-btn">
-            Sign Up
-          </button>
-        </form>
-
+            <SignUpform handleChange={handleChange} handleSubmit={handleSubmit}/>
         <p className="auth-footer">
           Already have an account? <a href="/login">Login here</a>
         </p>
+
+        </>
+        )}
       </div>
     </div>
   );
