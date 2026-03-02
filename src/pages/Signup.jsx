@@ -8,6 +8,7 @@ import SignUpform from '../components/Signup/form.jsx';
 
 
 export default function SignupPage() {
+  
   const [isSucces,setIssucces]= useState(false)
   const navigate = useNavigate()
   const [State,setState]= useState({

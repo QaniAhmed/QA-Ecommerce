@@ -7,7 +7,7 @@ function LoginIconSectoin() {
   return (
     <div>
        <div className="bottom-header-right">
-        <Link to={'/Register'}>
+        <Link to={'/Register'} className='LinkStyle'>
           <div className="login-wrapper">
             <PersonOutlineIcon className="login-icon" />
             <span className="login-text">Login / Register</span>
