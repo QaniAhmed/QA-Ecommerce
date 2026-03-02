@@ -8,6 +8,8 @@ import Home from './pages/Home.jsx'
 import Cart from './pages/Cart.jsx'
 import SignupPage from './pages/Signup.jsx'
 import Login from './pages/login.jsx'
+import { AuthProvider } from './Context/AuthContext.jsx'
+import Profile from './pages/Profile.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,10 +35,15 @@ const router = createBrowserRouter([
     path: "Login",
     element: <Login />
   },
+  {
+    path:'Profile',
+    element:<Profile/>
+
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <AuthProvider>
     <RouterProvider router={router} />
-  </StrictMode>,
+  </AuthProvider>,
 )
