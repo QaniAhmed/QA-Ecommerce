@@ -5,12 +5,39 @@ import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import BadgeIcon from '@mui/icons-material/Badge';
 import FingerprintIcon from '@mui/icons-material/Fingerprint';
-import { useAuth } from '../Context/AuthContext';
+import {useNavigate} from 'react-router-dom'
+import { useAuth, } from '../Context/AuthContext';
+import axios from 'axios';
+import { useEffect } from 'react';
 const Profile = () => {
-const { user, loading } = useAuth(); 
+  const navigate = useNavigate()
+
+const { user, loading,setUser } = useAuth(); 
+
+ async function handleLogout(){
+  try {
+    await axios.post("http://localhost:5000/Logout",{},{
+      withCredentials:true
+    });
+    setUser(null); 
+    navigate("/login");
+  } catch (error) {
+    console.error("Logout failed", error);
+  }
+ }
+ useEffect(()=>{
+  if(!user)
+    navigate("/login");
+ },[user,navigate,loading])
 
 
-console.log(user)
+ if (loading) {
+    return <div className="profile-container">Loading...</div>;
+  }
+
+  if (!user) {
+    return null; 
+  }
   return (
     <div className="profile-container">
       <div className="profile-card">
@@ -61,7 +88,7 @@ console.log(user)
         </div>
 
         <div className="profile-footer">
-          <button className="logout-btn">Logout</button>
+          <button className="logout-btn" onClick={handleLogout}>Logout</button>
         </div>
       </div>
     </div>
