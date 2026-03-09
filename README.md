@@ -1,16 +1,37 @@
-# React + Vite
+# 🛒 Modern Full-Stack E-commerce Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A secure, high-performance e-commerce solution with a professional user dashboard, built with React, Node.js, and Supabase.
 
-Currently, two official plugins are available:
+## 🛠 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: React.js (Vite), Context API, Axios, Material UI.
+- **Backend**: Node.js, Express.js.
+- **Database/Auth**: Supabase .
+- **Security**: HTTP-Only Cookies, CORS, and JWT.
 
-## React Compiler
+## ✨ Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Real-Time Shopping Cart**: Integrated cart system that updates instantly when adding or removing products, providing a seamless user experience.
+- **Live Auth Sync**: UI automatically updates to "Welcome, [Name]" upon login without page refreshes.
+- **Secure Authentication**: Persistent sessions and HTTP-Only cookies to mitigate XSS attacks.
+- **Smart Checkout Summary**: Dedicated checkout page that automatically calculates the subtotal and grand total of all items added to the cart.
 
-## Expanding the ESLint configuration
+## 🚀 Quick Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1- Backend
+
+```bash
+cd server
+npm install
+# Add SUPABASE_URL and SUPABASE_KEY to .env
+node index.js
+
+```
+
+### 2- Frontend
+
+```bash
+cd QA_Ecommerce
+npm install
+npm run dev
+```

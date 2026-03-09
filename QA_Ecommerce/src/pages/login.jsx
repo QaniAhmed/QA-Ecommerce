@@ -3,8 +3,10 @@ import './Login.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../Context/AuthContext';
 
 const Login = () => {
+  const {setUser} = useAuth()
     const navigate = useNavigate()
     const [credentials,setcredentials] = useState({
         email:"",
@@ -29,6 +31,7 @@ const Login = () => {
             )
             console.log(response)
             if(response.status ===200){
+              setUser(response.data.user);
                 alert('login successfully')
                 navigate('/')
             }

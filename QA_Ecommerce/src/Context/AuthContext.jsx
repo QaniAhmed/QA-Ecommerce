@@ -1,31 +1,27 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 
-// 1. إنشاء السياق (Context)
 const AuthContext = createContext();
 
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null); // تخزين بيانات المستخدم
-  const [loading, setLoading] = useState(true); // حالة التحميل عند فتح الموقع
+  const [user, setUser] = useState(null); 
+  const [loading, setLoading] = useState(true); 
 
-  // دالة لفحص الجلسة من السيرفر
   const checkUser = async () => {
     try {
-      // نطلب من السيرفر التحقق من الكوكي
       const { data } = await axios.get("http://localhost:5000/profile",{
         withCredentials:true
       });
-      setUser(data.Details); // نضع بيانات المستخدم (الاسم، الايد، الخ) في الـ State
+      setUser(data.Details); 
       console.log(data.Details)
     } catch (err) {
-      setUser(null); // إذا فشل أو لا يوجد كوكي، يبقى المستخدم null
+      setUser(null);
     } finally {
-      setLoading(false); // انتهينا من الفحص
+      setLoading(false);
     }
   };
 
-  // تشغيل الفحص فور فتح الموقع (أو عند عمل Refresh)
   useEffect(() => {
     checkUser();
   }, []);
