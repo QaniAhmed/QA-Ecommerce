@@ -26,6 +26,7 @@ function App() {
         CartItems, 
         UpdateCart, 
         UpdateWishlist, 
+        WishlistItems,
         IncreaseCartWithCount, 
         DecreaseCartWithCount, 
         totalQuantity,RemoveItem

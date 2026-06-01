@@ -7,9 +7,7 @@ const BottomHeader = () => {
   return (
     <nav className="bottom-header">
       <div className="bottom-header-container">
-        
-        
-       
+
     <NavigationSection/>
     <LoginIconSectoin/>
 

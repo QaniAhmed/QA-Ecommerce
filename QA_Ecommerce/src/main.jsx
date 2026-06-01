@@ -10,6 +10,7 @@ import SignupPage from './pages/Signup.jsx'
 import Login from './pages/login.jsx'
 import { AuthProvider } from './Context/AuthContext.jsx'
 import Profile from './pages/Profile.jsx'
+import Wishlist from './pages/wishlist.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
 
       {path:"Cart",
       element:<Cart/>},
+
+      {path:"Wishlist",
+        element:<Wishlist/>
+      }
     ],
   },
   {

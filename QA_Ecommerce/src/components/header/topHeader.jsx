@@ -36,8 +36,9 @@ export default function TopHeader(props) {
         </div>
         <div className="header-right">
                                               {/* wishlist */}
+          <Link to={'Wishlist'}  className='LinkStyle'> 
          <div className="action-item">
-
+          
           <div className="icon-wrapper">
             <span className="action-icon"><FavoriteBorderIcon /></span>
             {props.Wishlist > 0 && (
@@ -47,6 +48,7 @@ export default function TopHeader(props) {
           
           <span className="action-label">Wishlist</span>
         </div>
+          </Link>
                             {/* cart */}
           <Link to={'Cart'} className='LinkStyle'>
           <div className="action-item cart-btn">
