@@ -14,14 +14,12 @@ import TrustSection from '../components/Product_details/TrustSection.jsx';
 
 const ProductDetails = () => {
 
-
     const { id } = useParams();
     const [product, setProduct] = useState(null);
 
 
     useEffect(() => {
         const GetProductInfo = async function() {
-
             try 
             {
                 const response = await fetch(`https://dummyjson.com/products/${id}`);

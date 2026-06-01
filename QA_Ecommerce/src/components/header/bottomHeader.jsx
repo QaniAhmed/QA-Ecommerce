@@ -2,7 +2,6 @@ import './BottomHeader.css';
 
 import LoginIconSectoin from './bottomHeader/LoginIconSectoin.jsx';
 import NavigationSection from './bottomHeader/NavigationSection.jsx';
-import Categories_dropdown from './bottomHeader/categories-dropdown.jsx';
 
 const BottomHeader = () => {
   return (
@@ -10,7 +9,7 @@ const BottomHeader = () => {
       <div className="bottom-header-container">
         
         
-       <Categories_dropdown/>
+       
     <NavigationSection/>
     <LoginIconSectoin/>
 

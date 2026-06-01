@@ -41,7 +41,7 @@ const Products = (props) => {
             <div className="product-info">
               <span className="category-label">Smartphone</span>
               <h3 className="product-title">{product.title}</h3>
-              
+
               <div className="rating">
                 <StarIcon className="star-icon" />
                 <span>{product.rating}</span>
@@ -52,14 +52,12 @@ const Products = (props) => {
                   <span className="current-price">${product.price}</span>
                   <span className="old-price">${Math.round(product.price * 1.2)}</span>
                 </div>
+                
                 <button className="add-cart-btn" onClick={(e)=>HandleCart(e,product)}>Add</button>
-              </div>
-              
+              </div> 
             </div>
           </Link>
           </div>
-          
-         
         ))}
       </div>
     </section>
