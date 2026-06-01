@@ -42,7 +42,6 @@ app.post("/Signup", async (req, res) => {
     return res.status(401).json({ message: "Error in signup", error: error });
   return res.status(201).json({ message: "Account successfully created" });
 });
-
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   console.log(email, password);
@@ -68,12 +67,10 @@ app.post("/login", async (req, res) => {
     },
   });
 });
-
 app.post("/logout", (req, res) => {
   res.clearCookie("session");
   res.status(200).json({ message: "logout successfully" });
 });
-
 app.get("/profile", SecureRoute, (req, res) => {
   const {
     id,
@@ -91,7 +88,6 @@ app.get("/profile", SecureRoute, (req, res) => {
     },
   });
 });
-
 app.post("/logout", (req, res) => {
   res.clearCookie("session", {
     httpOnly: true,
@@ -105,7 +101,6 @@ app.post("/Update", SecureRoute, async (req, res) => {
   const { email, full_name, phone_number } = req.body;
 
   const { data, error } = await db.auth.updateUser({
-    // email: email, // إذا أردت تغيير إيميل تسجيل الدخول
     data: {
       full_name: full_name,
       phone_number: phone_number,

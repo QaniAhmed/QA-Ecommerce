@@ -123,8 +123,8 @@
 
 .cart-badge, .Wishlist-badge {
   position: absolute;
-  top: -6px;
-  right: -8px;
+  top: -8px;
+  right: 4px;
   background-color: var(--accent-red);
   color: white;
   font-size: 0.65rem;
