@@ -52,7 +52,9 @@ export default function TopHeader(props) {
           <div className="action-item cart-btn">
             <span className="action-icon">{<ShoppingCartIcon/>}</span>
             <span className="action-label">Cart</span>
-            <span className={props.cart>0?"cart-badge":""}> {props.cart>0?props.cart:""} </span>
+           {props.cart > 0 && (
+          <span className="cart-badge">{props.cart}</span>
+            )}
           </div>
           </Link>
         </div>
