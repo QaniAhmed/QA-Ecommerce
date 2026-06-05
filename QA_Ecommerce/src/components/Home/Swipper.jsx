@@ -32,7 +32,17 @@ function Swipper() {
         modules={[Pagination, Navigation, Autoplay]}
         className="mySwiper"
       >
-        {/* Slide 1 */}
+        <SwiperSlide>
+  <div className="slide-content">
+    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop" alt="Latest Fashion Trends" />
+    <div className="slide-overlay">
+      <h2>Modern Apparel</h2>
+      <p>Redefine your wardrobe with our curated seasonal collection</p>
+      <button className="banner-btn">Explore</button>
+    </div>
+  </div>
+</SwiperSlide>
+
         <SwiperSlide>
           <div className="slide-content">
             <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=2070&auto=format&fit=crop" alt="Sale 1" />
@@ -44,7 +54,17 @@ function Swipper() {
           </div>
         </SwiperSlide>
 
-        {/* Slide 2 */}
+        <SwiperSlide>
+  <div className="slide-content">
+    <img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?q=80&w=2070&auto=format&fit=crop" alt="Premium Electronics Sale" />
+    <div className="slide-overlay">
+      <h2>Next-Gen Electronics</h2>
+      <p>Upgrade your setup with exclusive deals on premium devices</p>
+      <button className="banner-btn">Shop Now</button>
+    </div>
+  </div>
+</SwiperSlide>
+
         <SwiperSlide>
           <div className="slide-content">
             <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop" alt="Sale 2" />
@@ -56,15 +76,9 @@ function Swipper() {
           </div>
         </SwiperSlide>
 
-        {/* Slide 3 */}
-        <SwiperSlide>
-            <div className="slide-content">
-                <div className="text-only-slide">
-                    <h2>Flash Sale is Live!</h2>
-                    <p>Only for the next 24 hours.</p>
-                </div>
-            </div>
-        </SwiperSlide>
+
+
+
       </Swiper>
     </div>
   );
