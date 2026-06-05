@@ -11,7 +11,6 @@ function Image_Gallery(props) {
     <div>
         <div className="gallery-container">
                 <div className="main-display">
-                    {/* Logic: Displays the product image. You can link this to your custom state logic */}
                     <img src={props.product.images[selectedImg]} alt={props.product.title} />
                 </div>
                 <div className="thumbnail-strip">

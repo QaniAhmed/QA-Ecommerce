@@ -1,38 +1,31 @@
-/* ✨ معايير المواقع الكبرى: ألوان مطفية راقية، مساحات بيضاء متزنة، حركات فائقة النعومة
-*/
+
 :root {
   --bg-main: #f8fafc;
   --surface-white: #ffffff;
   
-  /* ألوان احترافية (ليست فاقعة ولكنها مبهجة وعميقة) */
-  --brand-success: #16a34a;       /* أخضر الـ Checkout العالمي (ثقة وأمان) */
-  --brand-success-light: #f0fdf4; /* خلفيات ناعمة للتنبيهات */
-  --text-dark: #0f172a;           /* كحلي داكن جداً بديل للأسود القاسي */
-  --text-muted: #475569;          /* رمادي ناعم ومريح للقراءة */
-  --interactive-blue: #2563eb;    /* لون تفاعلي مبهج لتحريك العين */
+  --brand-success: #16a34a;       
+  --brand-success-light: #f0fdf4; 
+  --text-dark: #0f172a;           
+  --text-muted: #475569;          
+  --interactive-blue: #2563eb;    
   
-  /* أبعاد ناعمة */
   --radius-premium: 16px;
   --radius-interactive: 12px;
   
-  /* ظلال تحاكي الواقع الطبيعي (Soft Ambient Shadows) */
   --shadow-subtle: 0 1px 3px 0 rgba(15, 23, 42, 0.03), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
   --shadow-elevated: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
   
-  /* سرعة حركة المواقع الكبرى (تسمى الـ Snap Action: سريعة في البداية وناعمة في النهاية) */
   --transition-ux: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* الترتيب العام المريح للعين */
 .cart-page-container {
   max-width: 1140px;
   margin: 60px auto;
   padding: 0 24px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  -webkit-font-smoothing: antialiased; /* لجعل الخطوط أنعم وأكثر احترافية */
+  -webkit-font-smoothing: antialiased; 
 }
 
-/* العنوان: بسيط، فخم، بدون بهرجة زائدة */
 .cart-title {
   font-size: 2rem;
   font-weight: 700;
@@ -54,9 +47,7 @@
   }
 }
 
-/* -----------------------------------------
-   🛒 قسم المنتجات (تصميم هادئ ومقنع)
------------------------------------------ */
+
 .cart-items-section {
   display: flex;
   flex-direction: column;
@@ -75,7 +66,6 @@
   transition: var(--transition-ux);
 }
 
-/* تأثير الاحترافية: الكارت لا يتحرك للأعلى كألعاب الفيديو، بل تزيد سماكته البصرية بلطف ويبرز */
 .cart-item-card:hover {
   border-color: #cbd5e1;
   box-shadow: var(--shadow-elevated);
@@ -86,7 +76,6 @@
   gap: 20px;
 }
 
-/* الصورة: حواف ناعمة وخلفية حيادية */
 .item-image {
   width: 96px;
   height: 96px;
@@ -97,7 +86,7 @@
 }
 
 .cart-item-card:hover .item-image {
-  transform: scale(1.02); /* تمدد خفيف جداً يبعث الحيوية */
+  transform: scale(1.02); 
 }
 
 .item-info {
@@ -121,7 +110,6 @@
   margin: 0 0 12px 0;
 }
 
-/* زر الحذف: أنيق ومخفي جزئياً ولا يظهر بقوة إلا عند التفاعل ليظل الموقع مريحاً */
 .remove-btn {
   align-self: flex-start;
   background: none;
@@ -138,9 +126,7 @@
   color: #ef4444;
 }
 
-/* -----------------------------------------
-   ➕➖ أزرار التحكم بالكمية
------------------------------------------ */
+
 .item-actions {
   display: flex;
   justify-content: space-between;
@@ -149,7 +135,6 @@
   padding-top: 16px;
 }
 
-/* كبسولة التحكم: تحاكي نظام Apple في النقاء */
 .quantity-controls {
   display: flex;
   align-items: center;
@@ -194,9 +179,7 @@
   margin: 0;
 }
 
-/* -----------------------------------------
-   💳 كارت ملخص الطلب وثقة الشراء
------------------------------------------ */
+
 .cart-summary-section {
   background: var(--surface-white);
   border-radius: var(--premium-radius);
@@ -233,7 +216,6 @@
   font-size: 1.3rem;
 }
 
-/* 🚀 زر إكمال الشراء (السر في ثقة وضمان المواقع الكبرى) 🚀 */
 .checkout-btn {
   width: 100%;
   padding: 16px;
@@ -248,9 +230,8 @@
   transition: var(--transition-ux);
 }
 
-/* 💡 تفاعل حركي ناضج وبدون بهرجة: */
 .checkout-btn:hover {
-  background-color: #15803d; /* يغمق اللون بلطف كدليل على التجاوب المريح */
+  background-color: #15803d; 
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
 }

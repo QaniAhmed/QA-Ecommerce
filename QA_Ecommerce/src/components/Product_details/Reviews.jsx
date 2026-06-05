@@ -9,10 +9,8 @@ function Reviews(props) {
                         <div key={i} className="review-item">
                             <div className="rev-user">
                                 <strong>{rev.reviewerName}</strong>
-                                {/* Logic: Formatting ISO date into local readable format */}
                                 <span>{new Date(rev.date).toLocaleDateString()}</span>
                             </div>
-                            {/* Logic: Generating star rating based on numerical value */}
                             <div className="stars">{"★".repeat(rev.rating)}</div>
                             <p>{rev.comment}</p>
                         </div>

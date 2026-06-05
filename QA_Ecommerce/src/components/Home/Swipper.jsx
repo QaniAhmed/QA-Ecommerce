@@ -10,7 +10,6 @@ import 'swiper/css/autoplay';
 
 import './Swipper.css';
 
-// Import required modules
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 function Swipper() {

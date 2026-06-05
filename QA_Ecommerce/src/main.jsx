@@ -11,6 +11,7 @@ import Login from './pages/login.jsx'
 import { AuthProvider } from './Context/AuthContext.jsx'
 import Profile from './pages/Profile.jsx'
 import Wishlist from './pages/wishlist.jsx'
+import SearchResults from './components/Products/SearchResults.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,7 +31,12 @@ const router = createBrowserRouter([
 
       {path:"Wishlist",
         element:<Wishlist/>
+      },
+      {
+        path:"search",
+        element:<SearchResults/>
       }
+
     ],
   },
   {
