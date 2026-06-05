@@ -14,6 +14,7 @@ import Wishlist from './pages/wishlist.jsx'
 import SearchResults from './components/Products/SearchResults.jsx'
 import Accessories from './pages/Accessories.jsx'
 import About from './pages/About.jsx'
+import Contact from './pages/Contact.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       },{
         path:"About",
         element:<About/>
+      },
+      {
+        path:"contact",
+        element:<Contact/>
       }
 
     ],
