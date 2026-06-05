@@ -1,0 +1,135 @@
+:root {
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --bg-subtle: #f8fafc;
+  --border-light: #e2e8f0;
+  --radius-premium: 16px;
+  --transition-ux: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.about-page-container {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 24px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hero Section */
+.about-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.about-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Content Grid */
+.about-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  .about-content-grid {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}
+
+.about-text-block h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.about-text-block p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* Stats Styling */
+.about-stats-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stat-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-premium);
+  padding: 24px;
+  text-align: center;
+  transition: var(--transition-ux);
+}
+
+.stat-card:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+}
+
+.stat-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* CTA Footer */
+.about-footer-cta {
+  text-align: center;
+  border-top: 1px solid var(--border-light);
+  padding-top: 60px;
+}
+
+.about-footer-cta h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.explore-shop-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--text-dark);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition-ux);
+}
+
+.explore-shop-btn:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.1);
+}

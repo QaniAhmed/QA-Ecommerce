@@ -13,6 +13,7 @@ import Profile from './pages/Profile.jsx'
 import Wishlist from './pages/wishlist.jsx'
 import SearchResults from './components/Products/SearchResults.jsx'
 import Accessories from './pages/Accessories.jsx'
+import About from './pages/About.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -40,6 +41,9 @@ const router = createBrowserRouter([
       {
         path:"Accessories",
         element:<Accessories/>
+      },{
+        path:"About",
+        element:<About/>
       }
 
     ],
